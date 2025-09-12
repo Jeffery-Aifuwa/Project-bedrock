@@ -70,11 +70,11 @@ resource "aws_route_table_association" "public_assoc_b" {
 resource "aws_subnet" "app_subnet" {
   vpc_id            = aws_vpc.bedrock_vpc.id
   cidr_block        = "10.0.3.0/24"
-  availability_zone = "eu-west-1a"  # Added AZ
+  availability_zone = "eu-west-1a" # Added AZ
   tags = {
     Name                                        = "bedrock-app-subnet"
     "kubernetes.io/cluster/bedrock-eks-cluster" = "owned"
-    "kubernetes.io/role/internal-elb"          = "1"
+    "kubernetes.io/role/internal-elb"           = "1"
   }
 }
 
@@ -82,7 +82,7 @@ resource "aws_subnet" "app_subnet" {
 resource "aws_subnet" "db_subnet" {
   vpc_id            = aws_vpc.bedrock_vpc.id
   cidr_block        = "10.0.4.0/28"
-  availability_zone = "eu-west-1b"  # Added AZ
+  availability_zone = "eu-west-1b" # Added AZ
   tags = {
     Name = "bedrock-db-subnet"
   }
