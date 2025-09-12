@@ -23,6 +23,18 @@ jobs:
     - name: Checkout repo
       uses: actions/checkout@v4
     
+    # Debug: Check repository structure
+    - name: Debug Repository Structure
+      run: |
+        echo "=== Root directory ==="
+        ls -la
+        echo "=== Infrastructure directory ==="
+        ls -la infrastructure/ || echo "infrastructure directory not found"
+        echo "=== Terraform directory ==="
+        ls -la infrastructure/terraform/ || echo "terraform directory not found"
+        echo "=== Current working directory ==="
+        pwd
+    
     - name: Setup Terraform
       uses: hashicorp/setup-terraform@v3
       with:
