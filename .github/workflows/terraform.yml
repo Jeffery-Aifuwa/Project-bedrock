@@ -31,7 +31,7 @@ jobs:
     # Debug: Terraform version
     - name: Terraform Version
       run: terraform version
-      # Remove working-directory if files are in root, or adjust path
+      working-directory: infrastructure/terraform
     
     # Debug: AWS credentials & region
     - name: Debug AWS Environment
@@ -42,22 +42,26 @@ jobs:
     # Terraform Init
     - name: Terraform Init
       run: terraform init
-      # Remove working-directory if files are in root
+      working-directory: infrastructure/terraform
     
     # Validate Terraform syntax
     - name: Terraform Validate
       run: terraform validate
+      working-directory: infrastructure/terraform
     
     # Terraform Plan
     - name: Terraform Plan
       run: terraform plan -out=tfplan
+      working-directory: infrastructure/terraform
     
     # Debug: show plan output (only for PRs to avoid logs being too long)
     - name: Terraform Plan Output
       if: github.event_name == 'pull_request'
       run: terraform show tfplan
+      working-directory: infrastructure/terraform
     
     # Terraform Apply (only on main branch)
     - name: Terraform Apply
       if: github.ref == 'refs/heads/main'
       run: terraform apply -auto-approve tfplan
+      working-directory: infrastructure/terraform
