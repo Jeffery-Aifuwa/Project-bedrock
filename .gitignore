@@ -4,3 +4,5 @@ terraform.tfstate
 .terraform.lock.hcl
 *.tfvars
 secrets/*
+k8s/manifests/db/secrets.yaml
+
