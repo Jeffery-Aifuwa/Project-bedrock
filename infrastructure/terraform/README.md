@@ -17,8 +17,8 @@ This folder contains the Terraform configuration to provision the AWS infrastruc
 
 - AWS Account with programmatic access
 - Terraform >= 1.7.0
-- AWS CLI configured (optional for testing)
-- GitHub repository with workflow for CI/CD (optional)
+- AWS CLI configured
+- GitHub repository with workflow for CI/CD
 
 ## How to Deploy
 
