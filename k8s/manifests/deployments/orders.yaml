@@ -19,7 +19,7 @@ spec:
         - containerPort: 8082
         envFrom:
         - secretRef:
-            name: db-secrets
+            name: db-secrets 
         resources:
           requests:
             cpu: 100m

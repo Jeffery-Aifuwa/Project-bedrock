@@ -23,13 +23,6 @@ spec:
                 name: orders
                 port:
                   number: 8082
-          - path: /catalog
-            pathType: Prefix
-            backend:
-              service:
-                name: catalog
-                port:
-                  number: 8080
           - path: /carts
             pathType: Prefix
             backend:
