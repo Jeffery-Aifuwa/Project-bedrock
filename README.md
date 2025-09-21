@@ -26,7 +26,7 @@ This README documents the **step-by-step process**, key decisions, fixes, and wo
 You can explore the running Retail Store Application here:  
 [Retail Store Sample App](http://a0c3922ab44424a6d82eb8c25517842d-16943992.eu-west-1.elb.amazonaws.com/)
 
-### Screenshots
+### Visuals
 
 #### Home Page
 ![Home Page](Visuals/home.png)
